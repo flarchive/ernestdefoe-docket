@@ -1,0 +1,398 @@
+// Report centre. Only Flarum's own colour properties, so every theme and dark mode
+// carry through.
+
+.DocketPage {
+  padding-bottom: 40px;
+}
+.DocketMinePage {
+  padding-top: 20px;
+}
+.DocketPage-title {
+  margin: 0 0 15px;
+  font-size: 18px;
+}
+.DocketPage-intro {
+  color: var(--muted-color);
+  margin: -8px 0 15px;
+}
+.DocketPage-nav .Button-badge {
+  margin-left: 6px;
+}
+.DocketQueueLink--colored .Button-icon {
+  color: var(--docket-queue);
+}
+
+.DocketList-items,
+.DocketMine,
+.DocketEntries,
+.DocketTimeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.DocketList-more {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.DocketItem {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: @border-radius;
+  background: var(--control-bg);
+  color: var(--text-color);
+  text-decoration: none !important;
+
+  &:hover {
+    background: var(--control-bg-shaded);
+  }
+}
+.DocketItem-avatar {
+  .Avatar--size(36px);
+  flex-shrink: 0;
+}
+.DocketItem-main {
+  flex: 1;
+  min-width: 0;
+}
+.DocketItem-title {
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.DocketItem-id {
+  color: var(--muted-color);
+  font-weight: normal;
+}
+.DocketItem-excerpt {
+  margin: 3px 0;
+  color: var(--muted-color);
+  overflow-wrap: anywhere;
+}
+.DocketItem-meta {
+  font-size: 12px;
+  color: var(--muted-color);
+
+  span + span::before {
+    content: ' · ';
+  }
+}
+.DocketItem-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+
+  .Avatar {
+    .Avatar--size(24px);
+  }
+}
+
+.DocketStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--muted-color) 15%, transparent);
+  color: var(--text-color);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.DocketStatus--open {
+  background: fade(@primary-color, 15%);
+}
+.DocketStatus--in_progress {
+  background: fade(#e6a23c, 22%);
+}
+.DocketStatus--resolved {
+  background: fade(#3a9b52, 20%);
+}
+.DocketStatus--rejected {
+  background: fade(#d83e3e, 15%);
+}
+
+.DocketQueueChip {
+  --docket-queue: var(--muted-color);
+  font-size: 12px;
+  padding: 1px 8px;
+  border-radius: 12px;
+  border: 1px solid var(--docket-queue);
+  color: var(--text-color);
+  white-space: nowrap;
+}
+
+// One report
+.DocketReport-head {
+  margin: 10px 0 20px;
+}
+.DocketReport-back {
+  padding-left: 0;
+  padding-right: 0;
+}
+.DocketReport-title {
+  margin: 5px 0 3px;
+  font-size: 22px;
+}
+.DocketReport-sub {
+  color: var(--muted-color);
+}
+.DocketReport-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 0 20px;
+  align-items: start;
+
+  @media @phone, @tablet {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+// On a phone the actions come first, they are what you came for; the
+// history stays after the post.
+@media @phone {
+  .DocketReport-side {
+    display: contents;
+  }
+  .DocketControls {
+    order: -1;
+  }
+  .DocketPost-controls .Button-label {
+    display: none;
+  }
+}
+
+.DocketCard {
+  background: var(--body-bg);
+  border: 1px solid var(--control-bg);
+  border-radius: @border-radius;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+.DocketCard--muted {
+  color: var(--muted-color);
+}
+.DocketCard-title {
+  margin: 0 0 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--muted-color);
+}
+
+.DocketPost-head {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+
+  .Avatar {
+    .Avatar--size(36px);
+  }
+}
+.DocketPost-who {
+  flex: 1;
+  min-width: 0;
+  font-weight: bold;
+}
+.DocketPost-where {
+  font-weight: normal;
+  font-size: 12px;
+  color: var(--muted-color);
+}
+.DocketPost-body {
+  overflow-wrap: anywhere;
+}
+.DocketPost--hidden .DocketPost-body {
+  opacity: 0.6;
+}
+.DocketPost-flag,
+.DocketPost-warnings {
+  font-size: 13px;
+  color: var(--muted-color);
+  margin: 8px 0;
+}
+
+.DocketEntry {
+  display: flex;
+  gap: 10px;
+  padding: 6px 0;
+
+  .Avatar {
+    .Avatar--size(24px);
+    flex-shrink: 0;
+  }
+}
+.DocketEntry-detail {
+  margin-top: 3px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.DocketControls-row {
+  margin-bottom: 12px;
+}
+.DocketControls-label {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--muted-color);
+  margin-bottom: 4px;
+}
+.DocketControls-user {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: bold;
+
+  .Avatar {
+    .Avatar--size(24px);
+  }
+}
+.DocketControls-none {
+  color: var(--muted-color);
+}
+.DocketControls-buttons,
+.DocketControls-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+.DocketControls-actions .Button {
+  flex: 1;
+}
+.DocketControls .Select {
+  width: 100%;
+}
+.DocketControls-told {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--muted-color);
+}
+
+.DocketTimeline-item {
+  display: flex;
+  gap: 10px;
+  padding: 6px 0;
+  overflow-wrap: anywhere;
+
+  .Avatar {
+    .Avatar--size(24px);
+    flex-shrink: 0;
+  }
+}
+.DocketTimeline-dot {
+  width: 8px;
+  height: 8px;
+  margin: 6px 8px 0;
+  border-radius: 50%;
+  background: var(--muted-color);
+  flex-shrink: 0;
+}
+.DocketTimeline-note {
+  flex: 1;
+  min-width: 0;
+  background: var(--control-bg);
+  border-radius: @border-radius;
+  padding: 8px 10px;
+}
+.DocketTimeline-meta,
+.DocketTimeline-time,
+.DocketTimeline-empty {
+  font-size: 12px;
+  color: var(--muted-color);
+}
+.DocketTimeline-body {
+  white-space: pre-wrap;
+}
+.DocketTimeline-outcome,
+.DocketMine-outcome {
+  margin: 6px 0 0;
+  padding: 6px 10px;
+  border-left: 3px solid @primary-color;
+  white-space: pre-wrap;
+}
+.DocketNote {
+  margin-top: 10px;
+
+  textarea {
+    width: 100%;
+  }
+}
+.DocketNote-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+.DocketHistory .DocketItem {
+  padding: 8px;
+}
+.DocketHistory > .Button--link {
+  padding-left: 0;
+}
+.DocketHistory-empty {
+  color: var(--muted-color);
+  margin: 0;
+}
+
+// My reports
+.DocketMine-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.DocketMine-when,
+.DocketMine-excerpt,
+.DocketMine-gone,
+.DocketMine-reason {
+  color: var(--muted-color);
+  font-size: 13px;
+}
+.DocketMine-what {
+  font-weight: bold;
+  margin-bottom: 4px;
+  overflow-wrap: anywhere;
+}
+.DocketMine-excerpt {
+  font-weight: normal;
+}
+
+// Crowd moderation: what members' reports did to the post.
+.DocketCrowdChip {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: fade(#d83e3e, 15%);
+  white-space: nowrap;
+}
+.DocketCrowd {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-radius: @border-radius;
+  background: fade(#d83e3e, 12%);
+
+  > .fas {
+    font-size: 18px;
+  }
+}
+.DocketCrowd-text {
+  flex: 1;
+  min-width: 200px;
+}
+.DocketCrowd--held {
+  background: var(--control-bg);
+}
