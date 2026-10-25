@@ -2,16 +2,13 @@
 
 > **Read-only archive of released versions of ernestdefoe/docket.** Not for installation: use [Packagist](https://packagist.org/packages/ernestdefoe/docket) or the [upstream repository](https://github.com/ernestdefoe/docket).
 
-**4** versions archived · Latest: [`1.3.0`](https://github.com/flarchive/ernestdefoe-docket/tree/archive/v1.3.0) · License: `MIT` · Flarum: `^2.0`
+**0** versions archived · Latest: [`1.4.0`](https://github.com/flarchive/ernestdefoe-docket/tree/archive/v1.4.0) · License: `MIT` · Flarum: `^2.0`
 
 ## Archived Versions
 
 | Version | Released | Flarum | Source |
 |---|---|---|---|
-| `1.0.0` | 2026-10-20 | `^2.0` | [Browse](https://github.com/flarchive/ernestdefoe-docket/tree/archive/v1.0.0) |
-| `1.1.0` | 2026-10-21 | `^2.0` | [Browse](https://github.com/flarchive/ernestdefoe-docket/tree/archive/v1.1.0) |
-| `1.2.0` | 2026-10-25 | `^2.0` | [Browse](https://github.com/flarchive/ernestdefoe-docket/tree/archive/v1.2.0) |
-| `1.3.0` | 2026-10-25 | `^2.0` | [Browse](https://github.com/flarchive/ernestdefoe-docket/tree/archive/v1.3.0) |
+| — | — | — | — |
 
 Catalog entry: [packages/ernestdefoe-docket.json](https://github.com/flarchive/archive-index/blob/main/packages/ernestdefoe-docket.json)
 
