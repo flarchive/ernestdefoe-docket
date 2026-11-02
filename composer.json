@@ -1,0 +1,94 @@
+{
+  "name": "ernestdefoe/docket",
+  "description": "A report centre for Flarum 2, built on Flags: report queues, auto-assignment rules, claim and assign, open / in progress / resolved / rejected, staff notes on every report, the outcome sent to the people who reported, and the report history of every post and member.",
+  "keywords": [
+    "flarum",
+    "flarum-extension",
+    "flags",
+    "reports",
+    "report centre",
+    "moderation",
+    "queue"
+  ],
+  "type": "flarum-extension",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "ernestdefoe",
+      "email": "ernestdefoe@gmail.com"
+    }
+  ],
+  "homepage": "https://github.com/ernestdefoe/docket",
+  "support": {
+    "issues": "https://github.com/ernestdefoe/docket/issues",
+    "source": "https://github.com/ernestdefoe/docket"
+  },
+  "require": {
+    "php": "^8.3",
+    "flarum/core": "^2.0",
+    "flarum/flags": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "ErnestDefoe\\Docket\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ErnestDefoe\\Docket\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "flarum-extension": {
+      "title": "Docket",
+      "category": "feature",
+      "icon": {
+        "name": "fas fa-clipboard-list",
+        "backgroundColor": "#4a3f6b",
+        "color": "#fff"
+      },
+      "optional-dependencies": [
+        "flarum/tags",
+        "flarum/approval",
+        "fof/moderator-warnings"
+      ]
+    },
+    "flarum-cli": {
+      "modules": {
+        "js": true,
+        "css": true,
+        "locale": true
+      }
+    }
+  },
+  "require-dev": {
+    "flarum/phpstan": "^2.0",
+    "flarum/testing": "^2.0",
+    "flarum/tags": "^2.0",
+    "flarum/approval": "^2.0",
+    "fof/moderator-warnings": "^2.0@rc",
+    "laravel/pint": "^1.32",
+    "fof/byobu": "^2.0",
+    "flarum/suspend": "^2.0"
+  },
+  "scripts": {
+    "test": [
+      "@test:integration"
+    ],
+    "test:integration": "phpunit -c tests/phpunit.integration.xml",
+    "test:setup": "@php tests/integration/setup.php",
+    "analyse:phpstan": "phpstan analyse",
+    "style": "pint --test",
+    "style:fix": "pint"
+  },
+  "scripts-descriptions": {
+    "test": "Runs all tests.",
+    "test:integration": "Runs all integration tests.",
+    "test:setup": "Sets up a database for use with integration tests. Execute this only once.",
+    "analyse:phpstan": "Run static analysis",
+    "style": "Checks the code style",
+    "style:fix": "Fixes the code style"
+  },
+  "minimum-stability": "beta",
+  "prefer-stable": true
+}
